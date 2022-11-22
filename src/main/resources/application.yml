@@ -1,0 +1,15 @@
+greeting:
+  message: "hello"
+
+quarkus:
+  datasource:
+    reactive: 
+      ~: false
+    db-kind: postgresql
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    jdbc:
+      url: ${DB_JDBC_HOST}
+  
+  swagger-ui:
+    always-include: true
