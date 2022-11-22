@@ -10,6 +10,22 @@ quarkus:
     password: ${DB_PASSWORD}
     jdbc:
       url: ${DB_JDBC_HOST}
+      validation-query-sql: SELECT 1
+
+  hibernate-orm:
+    database:
+      default-schema: restaurant
+      generation:
+        ~: drop-and-create
+        create-schemas: true
+
+# Redis
+  redis:
+    devservices:
+      enabled: false
+    hosts: redis://localhost:6379
   
+# Swagger
   swagger-ui:
     always-include: true
+

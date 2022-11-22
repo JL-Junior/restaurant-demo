@@ -1,11 +1,18 @@
 services:
   db:
     image: postgres:alpine
+    container_name: db-postgres
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
       PGDATA: /home/postgresql/data
-
     ports:
       - ${DB_PORT}:5432    
+  
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - ${REDIS_PORT}:6379
+
